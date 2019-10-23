@@ -1,16 +1,22 @@
 require('minitest/autorun')
 require('minitest/rg')
-require_relative('../artist')
+require_relative('../exhibition')
 
-class TestArtist < MiniTest::Test
+class TestExhibtion < MiniTest::Test
 
 def setup
-  @artist1 = Artist.new({alias => 'Frank Quietly'})
+  @exhibtion1 = Exhibition.new({'title' => 'The Greens', 'catergory' => 'comicart'})
 end
 
-def test_alias()
-  result = @artist1.alias
-  assert_equal('Frank Quietly, result')
+def test_title()
+  result = @exhibition1.title
+  assert_equall('The Greens', result)
 end
+
+def test_catergory()
+  result = @exihibtion1.catergory
+  assert_equal('comicart', result)
+end
+
 
 end
