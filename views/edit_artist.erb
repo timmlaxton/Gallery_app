@@ -1,0 +1,15 @@
+<h2>Edit Artist: <%= @artist.alias %></h2>
+<form method="POST" action="/artists/<%= @artist.id %">
+  <div class="edit-form-wrapper">
+
+    <div class="edit-form-el">
+      <label for="alias">Alias:</label>
+      <input type="text" name="alias" id="alias" values"<%= @artist.alias %>"/>
+    </div>
+
+    <div class="edit-form-el">
+      <input type="submit" value="Save"/>
+    </div>
+
+  </div>
+</form>

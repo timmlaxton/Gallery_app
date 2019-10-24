@@ -1,0 +1,13 @@
+<h2>Artists</h2>
+
+<div id="artist-wrapper">
+  <% @artists.each do |artist| %>
+
+  <div class="artist">
+    <h3><a href="/management/artists/<%= artist.id %>"><%= artist.alias %></a></h3>
+    <h3>//////////////</h3>
+  </div>
+
+  <% end %>
+</div>
+<a href="/management/artists/new">Add New Artist</a>
