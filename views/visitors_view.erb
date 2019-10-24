@@ -1,0 +1,56 @@
+<div class="forms-wrapper">
+  <h2 style="color:white;">Current Exibitions:</h2>
+
+<form method="GET" action="/exibitions/filter/category">
+
+
+
+  <div class="form-wrapper">
+
+    <div class="form-el">
+      <label for="category_select">Filter by Category:</label>
+      <select name="category" id="category_select">
+        <% @exibitions.each do |exibition| %>
+            <option value=<%= exibition.category %>><%= exibition.category %></option>
+        <% end %>
+      </select>
+    </div>
+
+    <div class="form-el">
+      <input type="submit" value="Filter"/>
+    </div>
+
+  </div>
+</form>
+
+
+<form method="GET" action="/exibitions/filter/artist">
+  <div class="form-wrapper">
+
+    <div class="form-el">
+      <label for="artist_select">Filter by Artist:</label>
+      <select name="alias" id="artist_select">
+        <% @artists.each do |artist| %>
+            <option value=<%= artist.alias %>><%= artist.alias %></option>
+        <% end %>
+      </select>
+    </div>
+
+    <div class="form-el">
+      <input type="submit" value="Filter"/>
+    </div>
+
+  </div>
+</form>
+</div>
+
+<div id="exibition-wrapper">
+  <% @exibitions.each do |exibition| %>
+
+  <div class="exibition">
+    <h3><a href="/visitors/<%= exibition.id %>"><span class="blinking"><%= exibition.title %></span></a></h3>
+    <h4>by <%= exibition.artist.alias %></h4>
+  </div>
+
+  <% end %>
+</div>

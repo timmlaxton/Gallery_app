@@ -1,0 +1,15 @@
+<h2 style="text-align: center;">Exibitions:</h2>
+
+<div id="exibition-wrapper">
+  <% @exibitions.each do |exibition| %>
+
+  <div class="exibition">
+    <h3><a href="/management/exibitions/<%= exibition.id %>"><%= exibition.title %></a></h3>
+    <h4>by <%= exibition.artist.alias %></h4>
+  </div>
+
+  <% end %>
+  <div class="exibition">
+    <a  href="/management/exibitions/new" style="margin: 20px;">Add New Exibition</a>
+  </div>
+</div>
